@@ -1,15 +1,12 @@
 package com.meng.test;
 
-import com.meng.common.Person;
-import com.meng.dao.PersonDao;
-import com.meng.service.ProviderSevice;
+import com.meng.common.User;
+import com.meng.dao.UserDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.io.IOException;
 
 /**
  * Description:
@@ -18,17 +15,17 @@ import java.io.IOException;
  * @Date Create on 2018/5/4
  * @since version1.0 Copyright 2015 ZZJR All Rights Reserved.
  */
-@ContextConfiguration(locations = "classpath*:test-provider.xml")
+@ContextConfiguration(locations = "classpath*:test-consumer.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class PersonDaoTest {
+public class UserDaoTest {
 
     @Autowired
-    PersonDao personDao;
+    UserDao userDao;
 
     @Test
-    public void insertTest() throws IOException {
-        Person person = new Person();
-        person.setName("张三");
-        personDao.insertPerson(person);
+    public void insterTest(){
+        User user = new User();
+        user.setName("尼古拉斯·赵五");
+        userDao.insertUser(user);
     }
 }

@@ -1,5 +1,6 @@
 package com.meng.test;
 
+import com.meng.service.ConsumerServie;
 import com.meng.service.ProviderSevice;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,9 +24,11 @@ public class LcnTest {
     @Autowired
     ProviderSevice  providerSevice;
 
+    @Autowired
+    ConsumerServie consumerServie;
+
     @Test
     public void invokeDubbo() throws IOException {
-        providerSevice.lcndemo();
-        System.in.read();
+        consumerServie.lcnDemo();
     }
 }

@@ -9,6 +9,7 @@
     <dubbo:application name="lcn-provider"/>
     <dubbo:registry server="zkRegistry" protocol="zookeeper" address="192.168.1.204:2181" />
     <dubbo:protocol port="	18127" threadpool="cached" threads="1000"/>
+    <dubbo:consumer  filter="transactionFilter" />
     <dubbo:service interface="com.meng.service.ProviderSevice" ref="providerSeviceImpl" version="2.0" timeout="6000"/>
 
 </beans>

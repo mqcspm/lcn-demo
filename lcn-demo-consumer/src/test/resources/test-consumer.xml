@@ -6,9 +6,15 @@
 	   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 	  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="classpath:jdbc.properties"/>
+    </bean>
+
     <context:component-scan base-package="com.meng"/>
     <context:component-scan base-package="com.codingapi.tx.*"/>
     <aop:aspectj-autoproxy  proxy-target-class="true"/>
     <import resource="classpath*:consumer-dubbo.xml"/>
+    <import resource="classpath*:consumer-db.xml"/>
 
 </beans>

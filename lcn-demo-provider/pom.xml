@@ -20,17 +20,30 @@
             <artifactId>spring-aop</artifactId>
             <version>4.3.9.RELEASE</version>
         </dependency>
-        <!-- lcn-dubbo -->
-        <dependency>
-            <groupId>com.codingapi</groupId>
-            <artifactId>transaction-dubbo</artifactId>
-            <version>4.1.0</version>
-        </dependency>
-
-        <!-- lcn-db连接池 -->
+        <!-- lcn -->
         <dependency>
             <groupId>com.codingapi</groupId>
             <artifactId>tx-plugins-db</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codingapi</groupId>
+            <artifactId>tx-client</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.codingapi</groupId>
+            <artifactId>tx-plugins-db</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.codingapi</groupId>
+            <artifactId>transaction-dubbo</artifactId>
             <version>4.1.0</version>
         </dependency>
 

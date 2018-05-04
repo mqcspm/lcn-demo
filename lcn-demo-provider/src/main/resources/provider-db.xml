@@ -1,0 +1,64 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"
+       default-lazy-init="true" default-autowire="byName">
+
+	 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="url">
+				<value>${jdbc_url}</value>
+		</property>
+		 <property name="username"><value>${jdbc_username}</value></property>
+		 <property name="password"><value>${jdbc_password}</value></property>
+		 <property name="driverClassName"><value>${jdbc_driverClassName}</value></property>
+       <!-- <property name="connectProperties">
+            <props>
+                <prop key="config.decrypt">true</prop>
+                <prop key="config.decrypt.key">${public.jdbc.druid.key}</prop>
+            </props>
+        </property>-->
+        <!--<property name="filters"><value>${public.jdbc.druid.filters}</value></property>
+        <property name="maxActive"><value>${public.jdbc.druid.maxActive}</value></property>
+        <property name="initialSize">
+            <value>${public.jdbc.druid.initialSize}</value>
+        </property>
+        <property name="maxWait">
+            <value>${public.jdbc.druid.maxWait}</value>
+        </property>
+        <property name="minIdle">
+            <value>${public.jdbc.druid.minIdle}</value>
+        </property>
+        <property name="timeBetweenEvictionRunsMillis">
+            <value>${public.jdbc.druid.timeBetweenEvictionRunsMillis}</value>
+        </property>
+        <property name="minEvictableIdleTimeMillis">
+            <value>${public.jdbc.druid.minEvictableIdleTimeMillis}</value>
+        </property>
+        <property name="validationQuery">
+            <value>${public.jdbc.druid.validationQuery}</value>
+        </property>
+        <property name="testWhileIdle">
+            <value>${public.jdbc.druid.testWhileIdle}</value>
+        </property>
+        <property name="testOnBorrow">
+            <value>${public.jdbc.druid.testOnBorrow}</value>
+        </property>
+        <property name="testOnReturn">
+            <value>${public.jdbc.druid.testOnReturn}</value>
+        </property>
+        <property name="poolPreparedStatements">
+            <value>${public.jdbc.druid.poolPreparedStatements}</value>
+        </property>
+        <property name="maxOpenPreparedStatements">
+            <value>${public.jdbc.druid.maxOpenPreparedStatements}</value>
+        </property>-->
+    </bean>
+
+	
+	<!-- myBatis文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis/provider-configuration.xml" />
+		<property name="mapperLocations" value="classpath*:mybatis/mapper/*.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+</beans>
